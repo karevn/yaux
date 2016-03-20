@@ -29,7 +29,7 @@ function dispatch(factories, stores, state, action, params, options) {
     return callbacks(stores, action).reduce((function(promise, callback) {
       return promise.then(function(state) {
         var newState = callback(state, params);
-        if (newState === undefined || dispatch.inPlace && !isThenable(newState)) {
+        if (newState === undefined || options.inPlace && !isThenable(newState)) {
           newState = state
         }
         return newState
