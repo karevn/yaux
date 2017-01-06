@@ -1,4 +1,4 @@
-import callbacks from './src/callbacks'
+const callbacks = require('./src/callbacks')
 
 function maybeCall() {
     if (arguments[0]) {
@@ -6,7 +6,7 @@ function maybeCall() {
     }
 }
 
-export default class Store {
+module.exports = class Store {
     constructor(state, reducers, options) {
         this.state = state
         this.reducers = reducers || []

@@ -1,8 +1,8 @@
-import ReactDOM from 'react-dom'
-import React from 'react'
-import Store from './index'
+const ReactDOM = require('react-dom')
+const React = require('react')
+const Store = require('./index')
 
-export default class App {
+module.exports = class App {
     constructor (state, reducers, element, component) {
         this.store = new Store(state, reducers)
         this.component = component
