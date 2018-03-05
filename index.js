@@ -1,4 +1,4 @@
-const callbacks = require('./src/callbacks')
+import callbacks from './src/callbacks'
 
 function maybeCall() {
     if (arguments[0]) {

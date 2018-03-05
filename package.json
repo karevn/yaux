@@ -1,6 +1,6 @@
 {
   "name": "yaux",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Yet another minimalistic Flux implementation",
   "main": "lib/index.js",
   "repository": {
