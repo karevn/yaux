@@ -1,20 +1,30 @@
 {
   "name": "yaux",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Yet another minimalistic Flux implementation",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/karevn/yaux.git"
   },
+  "files": [
+    "lib/**",
+    "*.md"
+  ],
   "scripts": {
+    "build": "babel index.js -o lib/index.js && babel src/app.js -o lib/app.js",
     "test": "./node_modules/.bin/mocha --harmony"
   },
   "author": "Nikolay Karev",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^3.12.2",
     "chai": "^3.5.0",
+    "eslint": "^3.12.2",
     "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   }
 }
