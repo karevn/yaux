@@ -1,6 +1,6 @@
 {
   "name": "yaux",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Yet another minimalistic Flux implementation",
   "main": "lib/index.js",
   "repository": {
@@ -12,19 +12,31 @@
     "*.md"
   ],
   "scripts": {
-    "build": "babel index.js -o lib/index.js && babel src/app.js -o lib/app.js",
+    "build": "rollup -c --environment BUILD:index && rollup -c --environment BUILD:app ",
     "test": "./node_modules/.bin/mocha --harmony"
   },
   "author": "Nikolay Karev",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
     "chai": "^3.5.0",
     "eslint": "^3.12.2",
-    "mocha": "^2.4.5"
-  },
-  "dependencies": {
+    "mocha": "^2.4.5",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-peer-deps-external": "^2.1.0",
+    "rollup-plugin-replace": "^2.0.0"
+  },
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }

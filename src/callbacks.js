@@ -17,8 +17,6 @@ function nested(objects, action) {
     return callbacks(next, action.substr(index + 1))
 }
 
-function callbacks(objects, action) {
+export default function callbacks(objects, action) {
     return direct(objects, action).concat(nested(objects, action))
 }
-
-module.exports = callbacks

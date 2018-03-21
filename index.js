@@ -6,13 +6,11 @@ function maybeCall() {
     }
 }
 
-module.exports = class Store {
+export default class Store {
     constructor(state, reducers, options) {
         this.state = state
         this.reducers = reducers || []
-        this.options = Object.assign({
-            inPlace: true
-        }, options)
+        this.options = { inPlace: true, ...options }
         this.dispatch = ::this.dispatch
     }
 
