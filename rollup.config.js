@@ -21,7 +21,8 @@ export default {
       babelrc: false,
       exclude: 'node_modules/**',
       presets: [ [ 'env', { modules: false } ], 'stage-0', 'react' ],
-      plugins: [ 'external-helpers' ]
+      plugins: [ 'external-helpers', 'transform-runtime' ],
+      runtimeHelpers: true
     }),
     cjs({
       exclude: 'node_modules/process-es6/**',
@@ -32,6 +33,8 @@ export default {
         'node_modules/react/**',
         'node_modules/react-dom/**',
         'node_modules/prop-types/**',
+        'node_modules/babel-runtime/**',
+        'node_modules/core-js/**',
       ]
     }),
     globals(),
