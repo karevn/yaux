@@ -12,9 +12,10 @@ export default class App {
   }
 
   _onChange (state) {
-      const props = Object.assign({
-          dispatch: (action, param)=> this.store.dispatch(action, param)
-      }, state)
+      const props = {
+        dispatch: (action, param)=> this.store.dispatch(action, param),
+        ...state
+      }
       ReactDOM.render(
           React.createElement(this.component, props), this.element)
   }
